@@ -15,21 +15,21 @@ def Login_event():
         greeting.configure(text=f"hi {username}. glad to see you here!")
         
     else:
-        greeting.configure(text="check back you maybe entering wrong details!")
+        greeting.configure(text="Invalid Username or Password.")
         
-def set_background(root, image_path):
-    bg_image = PhotoImage(file=image_path)
-    bg_label = Label(root, image=bg_image)
-    bg_label.image = bg_image  
-    bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+# def set_background(root, image_path):
+#     bg_image = PhotoImage(file=image_path)
+#     bg_label = Label(root, image=bg_image)
+#     bg_label.image = bg_image  
+#     bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 
 
 root = Tk()
 root.title('Login Form')
 root.geometry('1024x600')
-root.configure(bg='#3B3B3B')
-set_background(root, 'C:\\Users\\VAMSIKETAN\\new_cpp\\image.png')
+# root.configure(bg='#3B3B3B')
+# set_background(root, 'C:\\Users\\VAMSIKETAN\\new_cpp\\image.png')
 header = Label(root,text='Login',)
 username_head = Label(root, text='Username')
 password_head = Label(root,text='Password')
@@ -44,7 +44,7 @@ password_head.grid(row=2)
 Password.grid(row=2,column=1)
 login_button.grid(row=3)
 
-greeting = Label(root, text="",bg='#3B3B3B',fg='white')
+greeting = Label(root, text="")
 greeting.grid(row=4, column=1, pady=10)
 
 root.mainloop()
