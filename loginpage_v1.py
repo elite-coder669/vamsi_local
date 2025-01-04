@@ -47,4 +47,4 @@ login_button.grid(row=3)
 greeting = Label(root, text="")
 greeting.grid(row=4, column=1, pady=10)
 
-root.mainloop()
+root.mainloop(ord == 'q')
