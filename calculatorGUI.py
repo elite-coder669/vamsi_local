@@ -1,5 +1,7 @@
 from tkinter import *
-
+import math
+import time
+import re
 # default check event for binding
 # def pressed():
     # print('button press')
@@ -8,8 +10,15 @@ from tkinter import *
 
 def evaluator():
     expression = entry.get() #this will return entry content as a string.
-    
-    
+    try:
+        result = eval(expression)
+        entry.delete(0,END)
+        entry.insert(0,str(result))
+    except Exception as e:
+        entry.delete(0,END)
+        entry.insert(0,"Invalid")
+        # time.sleep(3)
+        entry.insert(0,f"{e}")
 
 def restrict_keys(event):
     # Define the allowed keys for the calculator
@@ -25,11 +34,6 @@ def restrict_keys(event):
 def bind_keys():
     calculatorApp.bind("<s>", lambda event: entry.insert(INSERT, "√"))  # Bind 's' for sqrt button
     calculatorApp.bind("<Return>", lambda event: evaluator())  # Bind 'Return' key for equal (=) button
-
-
-
-
-
 
 
 
@@ -109,8 +113,8 @@ three.grid(row=4, column=2, sticky="ew", padx=5, pady=5)
 plus = Button(calculatorApp, text="+", fg='green', font=("Arial", 22), command= lambda: entry.insert(INSERT,"+"))
 plus.grid(row=4, column=3, sticky="ew", padx=5, pady=5)
 
-sqrt = Button(calculatorApp, text="√", fg='green', font=("Arial", 22), command= lambda: entry.insert(INSERT,"√"))
-sqrt.grid(row=5, column=0, sticky="ew", padx=5, pady=5)
+# sqrt = Button(calculatorApp, text="√", fg='green', font=("Arial", 22), command= lambda: entry.insert(INSERT,"√"))
+# sqrt.grid(row=5, column=0, sticky="ew", padx=5, pady=5)
 
 zero = Button(calculatorApp, text="0", fg='green', font=("Arial", 22), command= lambda: entry.insert(INSERT,"0"))
 zero.grid(row=5, column=1, sticky="ew", padx=5, pady=5)
