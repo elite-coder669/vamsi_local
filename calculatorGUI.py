@@ -113,8 +113,8 @@ three.grid(row=4, column=2, sticky="ew", padx=5, pady=5)
 plus = Button(calculatorApp, text="+", fg='green', font=("Arial", 22), command= lambda: entry.insert(INSERT,"+"))
 plus.grid(row=4, column=3, sticky="ew", padx=5, pady=5)
 
-# sqrt = Button(calculatorApp, text="√", fg='green', font=("Arial", 22), command= lambda: entry.insert(INSERT,"√"))
-# sqrt.grid(row=5, column=0, sticky="ew", padx=5, pady=5)
+sqrt = Button(calculatorApp, text="√", fg='green', font=("Arial", 22), command= lambda: entry.insert(INSERT,"√"))
+sqrt.grid(row=5, column=0, sticky="ew", padx=5, pady=5)
 
 zero = Button(calculatorApp, text="0", fg='green', font=("Arial", 22), command= lambda: entry.insert(INSERT,"0"))
 zero.grid(row=5, column=1, sticky="ew", padx=5, pady=5)
